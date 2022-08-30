@@ -37,7 +37,11 @@ void insertAtTail(Node* &head,int val)
 int mid(Node* head){
 Node* fast=head;
 Node* slow=head;
-while(fast->Next!=NULL){
+if(head==NULL){
+    return -1;
+}
+
+while(fast!=NULL&&fast->Next!=NULL){
     fast=fast->Next->Next;
     slow=slow->Next;
 }
