@@ -69,7 +69,7 @@ while(t--){
 
 }
 //display(head);
-cout<<endl;
+//cout<<endl;
 Node*newhead=reverseList(head);
 //display(newhead);
 bool ans=palindrome(head,newhead);
