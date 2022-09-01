@@ -1,18 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
+template <typename t>
 class Node{
 public:
-    int value;
+     t value;
     Node* Next;
     Node* Prev;
-    Node(int val){
+    Node(t val){
     value=val;
     }
 
 };
+template <typename st>
 class Stack{
-Node*head;
-Node*top;
+public:
+Node<st>*head;
+Node<st>*top;
 int ctn=0;
 public:
     Stack(){
@@ -21,8 +24,8 @@ public:
 
     }
 //////////////////push operation
-void push(int val){
-Node* newNode=new Node(val);
+void push(st val){
+Node<st>* newNode=new Node<st>(val);
 if(head==NULL){
     head=top=newNode;
     ctn++;
@@ -35,12 +38,12 @@ ctn++;
 return;
 }
 //////////////////////////pop operation /////////////////////
-int pop(){
-int val;
-Node*delNode;
+st pop(){
+st val;
+Node<st>*delNode;
 
 if(head==NULL){
-    return -1; ////the stack is underflow
+    return val; ////the stack is underflow
 }
 delNode=top;
 if(head==top){
@@ -68,6 +71,13 @@ bool empty(){
 int size(){
 return ctn;}
 ////////////////////////////top/////
-int Top(){
-return top->value;}
+st Top(){
+    st val;
+    if(head==NULL){
+        cout<<"Stack underflow";
+    }
+    else{
+        val=top->value;
+    }
+return val;}
 };
